@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div>
+    <h1 id="heading" style="text-align: center;">Data Visulaization Outputs</h1>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Box Plot of {{x}} and {{y}} </b></h2>
+            <img src="data:image/png;base64,{{ image_base64_1 }}" alt="Box plot">
+        </div>
+    </div>
+</div>
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Bar Chart of {{x}} </b></h2>
+            <img src="data:image/png;base64,{{ image_base64_2 }}" alt="bar chart of x">
+        </div>
+    </div>
+</div>
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Bar Chart of {{y}} </b></h2>
+            <img src="data:image/png;base64,{{ image_base64_3 }}" alt="bar chart of y">
+        </div>
+    </div>
+</div>
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Line Plot of {{x}} and {{y}} </b></h2>
+            <img src="data:image/png;base64,{{ image_base64_5 }}" alt="line plot">
+        </div>
+    </div>
+</div>
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Pie Chart of {{x}} and {{y}} </b></h2>
+            <img src="data:image/png;base64,{{ image_base64_6 }}" alt="pie chart">
+        </div>
+    </div>
+</div>
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Scatter Plot of {{x}} and {{y}} </b></h2>
+            <h1>{{er}}</h1>
+            <img src="data:image/png;base64,{{ image_base64_4 }}" alt="scatter">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

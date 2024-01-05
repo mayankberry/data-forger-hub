@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="container">
+
+    <div>
+        <h1 id="heading2" style="text-align: center;">Choose Machine Learning Algorithm.</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container mw-screen-xl" id="formhandle3">
+                <div id="jumbo4">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-10 text-center">
+                            <h1 class="ls-tight fw-bolder display-4 mb-5 text-white">Regression Analysis </h1>
+                            <p class="lead text-white opacity-8 mb-10">Regression analysis models the relationship between a dependent variable and independent variables, aiming to understand and quantify their connection. It enables predictions and insights into data patterns, making it valuable for various fields.</p>
+                                <br>
+                                <a href="{% url 'column_select' algorithm='regression' %}" id="btn" class="btn btn-lg btn-white mx-2 px-lg-8">Compute</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+<div class="col-md-6">
+<div class="container mw-screen-xl" id="formhandle3">
+    <div id="jumbo4">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-10 text-center">
+                <h1 class="ls-tight fw-bolder display-4 mb-5 text-white">k nearest neighbor </h1>
+                <p class="lead text-white opacity-8 mb-10">K-Nearest Neighbors (KNN) is a versatile machine learning algorithm for classification and regression. It predicts outcomes based on the majority or average of k nearby data points, leveraging the proximity of instances in the feature space for accurate predictions.</p>
+                    <br>
+                    <a href="{% url 'column_select' algorithm='knn' %}" id="btn" class="btn btn-lg btn-white mx-2 px-lg-8">Compute</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-md-15">
+        <div class="container mw-screen-xl" id="formhandle3">
+            <div id="jumbo">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-10 text-center">
+                        <h1 class="ls-tight fw-bolder display-4 mb-5 text-white">Data Visualization </h1>
+                        <p class="lead text-white opacity-8 mb-10">Data Visualization transforms data into visual elements, like charts and graphs, facilitating a clear understanding of patterns and insights. It simplifies complex information, enhancing communication and aiding decision-making across diverse domains.</p>
+                            <br>
+                            <a href="{% url 'column_select' algorithm='data_visual' %}" id="btn" class="btn btn-lg btn-white mx-2 px-lg-8">Compute</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

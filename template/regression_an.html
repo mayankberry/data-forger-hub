@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div>
+    <h1 id="heading" style="text-align: center;">Regression Analysis</h1>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Prediction =  {{ y_pred }}</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Mean Squared Error =  {{ mean_sq }}</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>R Squared =  {{ r_squared }}</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b> Intercept =  {{ intercept }}</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <img src="data:image/png;base64,{{ image_base64_reg }}" alt="Reg analysis">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

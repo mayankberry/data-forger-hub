@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div>
+    <h1 id="heading" style="text-align: center;">K Nearest Neighbor Regression</h1>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Prediction =  {{ y_pred }}</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>Mean Squared Error =  {{ mean_sq }}</b></h2>
+        </div>
+    </div>
+</div>
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <h2><b>k_neighbors =  {{ k_neighbors }}</b></h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo3">
+        <div class="row justify-content-center" id="inner">
+            <img src="data:image/png;base64,{{ image_base64_knn }}" alt="knn analysis">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

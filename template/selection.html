@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container mw-screen-xl" id="formhandle2">
+                <div id="jumbo2">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8 text-center">
+                            <h1 class="ls-tight fw-bolder display-4 mb-3 text-white">Choose Features Columns</h1>
+                            <form method="post" action="{% url 'column_select' algorithm=algorithm %}" id="form_x">
+                                {% csrf_token %}
+                                {% for column in columns %}
+                                <label id="column_names" for="column_x_{{ column }}" class="button-label">{{ column }}</label>
+                                <input type="checkbox" id="column_x_{{ column }}" class="button-checkbox" name="columns_x" value="{{ column }}"><br>
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="container mw-screen-xl" id="formhandle2">
+                <div id="jumbo2">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8 text-center">
+                            <h1 class="ls-tight fw-bolder display-4 mb-3 text-white">Choose Predictor Columns</h1>
+                            {% for column in columns %}
+                            <label id="column_names" for="column_y_{{ column }}" class="button-label">{{ column }}</label>
+                            <input type="checkbox" id="column_y_{{ column }}" class="button-checkbox" name="columns_y" value="{{ column }}"><br>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if algorithm == 'knn' %}
+        <div class="col-md-12">
+            <div class="container mw-screen-xl" id="formhandle2">
+                <div id="jumbo2">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8 text-center">
+                            <h1 class="ls-tight fw-bolder display-4 mb-3 text-white">Choose Number of Neighbors (k)</h1>
+                            <input type="number" name="k_neighbors" id="k_neighbors" min="1" value="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <button type="Submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+<script>
+    const checkboxes_x = document.querySelectorAll('input[name="columns_x"]');
+    const checkboxes_y = document.querySelectorAll('input[name="columns_y"]');
+
+    let maxSelection_x = 5;
+    let maxSelection_y = 1;
+    const algorithm = "{{ algorithm }}";
+
+    if (algorithm === 'data_visual') {
+        maxSelection_x = 1;
+    }
+
+    checkboxes_x.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            const checkedCheckboxes = document.querySelectorAll('input[name="columns_x"]:checked');
+            if (checkedCheckboxes.length > maxSelection_x) {
+                checkbox.checked = false;
+            }
+        });
+    });
+
+    checkboxes_y.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            const checkedCheckboxes = document.querySelectorAll('input[name="columns_y"]:checked');
+            if (checkedCheckboxes.length > maxSelection_y) {
+                checkbox.checked = false;
+            }
+        });
+    });
+
+</script>
+
+
+
+{% endblock %}

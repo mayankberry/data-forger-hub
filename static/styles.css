@@ -1,0 +1,144 @@
+.main{
+    background: rgb(121,212,255);
+    background: linear-gradient(158deg, rgba(121,212,255,1) 0%, rgba(230,9,222,1) 80%, rgba(255,238,137,1) 100%);
+}
+
+#icon{
+    width: 50px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.headerr{
+    background-color: black;
+    border-radius: 50rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    top: 10px;
+    margin: auto;
+    width: 75%;
+    z-index: 2;
+    position: relative;
+    display: block;
+}
+
+#row{
+    margin-top: 50px;
+    margin-bottom: 80px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+#pill{
+    color: white;
+    font-size: large;
+    padding: 1.5rem;
+}
+
+#heading{
+    color: white;
+    font-weight: 700;
+    margin-top: 30px;
+    font-size: 5rem;
+}
+
+
+#heading2{
+    color: white;
+    font-weight: 700;
+    margin-top: 30px;
+    font-size: 3rem;
+}
+
+.img-fluid{ 
+	animation:brath 5s  linear infinite;
+}
+	@keyframes brath{
+		0%{transform: scale(.9);}
+		25%{transform: scale(1);}
+		60%{transform: scale(.9);}
+		100%{transform: scale(1);}
+	}
+
+
+#jumbo{
+    border-radius: 30px;
+    margin: auto;
+    width: 75%;
+    background: rgb(25,27,28);
+    background: linear-gradient(180deg, rgba(25,27,28,1) 0%, rgba(150,135,40,1) 100%);
+}
+
+#jumbo2{
+    border-radius: 30px;
+    margin: auto;
+    background: rgb(25,27,28);
+}
+
+#jumbo2 .row{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#jumbo .row{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+
+#btn{
+    background-color: white;
+}
+
+
+#formhandle{
+    margin-top: 170px;
+    margin-bottom: 172px;
+}
+
+#formhandle2{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#formhandle3{
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+#column_names{
+    color: white;
+}
+
+#jumbo3{
+    border-radius: 30px;
+    margin: auto;
+    width: 90%;
+    background: rgb(25,27,28);
+}
+
+#jumbo4{
+    border-radius: 30px;
+    margin: auto;
+    height: 500px;
+    background: rgb(25,27,28);
+    background: linear-gradient(180deg, rgba(25,27,28,1) 0%, rgba(150,135,40,1) 100%);
+}
+
+#jumbo4 .row{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#inner{
+    padding: 30px;
+}
+
+#inner h2{
+    color : white;
+}
+
+

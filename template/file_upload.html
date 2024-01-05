@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container mw-screen-xl" id="formhandle">
+    <div id="jumbo">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+                <h1 class="ls-tight fw-bolder display-4 mb-5 text-white">Upload a .csv File </h1>
+                <p class="lead text-white opacity-8 mb-10">Ensure it has column names in the first row.</p>
+                <form method="post" enctype="multipart/form-data" action="{% url 'fileupload' %}">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input class="form-control" type="file" id="formFile" name="file" accept=".csv" required>
+                      </div>
+                    <br>
+                    <button type="submit" id="btn" class="btn btn-lg btn-white mx-2 px-lg-8">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<h6 style="margin: 0;">.</h6>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="container mw-screen-xl" id="formhandle2">
+    <div id="jumbo2">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 text-center">
+                <h1 class="ls-tight fw-bolder display-4 mb-3 text-white">Choose {{ num_col }} Columns</h1>
+                <form method="post" action="{% url 'column_select' algorithm=algorithm %}">          
+                    {% csrf_token %}
+                    {% for column in columns %}
+                    <label id="column_names" for="{{ column }}" class="button-label">{{ column }}</label>
+                    <input type="checkbox" class="button-checkbox" name="columns" value="{{ column }}"><br>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    const checkboxes = document.querySelectorAll('.button-checkbox');
+    let maxSelection = 2; 
+    const algorithm = "{{ algorithm }}"; 
+
+    if (algorithm === 'knn') {
+        maxSelection = 3;
+    }
+    else if(algorithm === 'regression'){
+        maxSelection = 4;
+    }
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+            const checkedCheckboxes = document.querySelectorAll('.button-checkbox:checked');
+            if (checkedCheckboxes.length > maxSelection) {
+                checkbox.checked = false;
+            }
+        });
+    });
+</script>
+
+{% endblock %}
